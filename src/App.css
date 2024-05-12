@@ -1,0 +1,49 @@
+.myCSS {
+  position: fixed; /* Change to fixed position */
+  top: 0; /* Position at the top of the screen */
+  left: 80%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px; /* Adjust padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Adjust font size */
+  margin: 140px auto; /* Adjust margin */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.myCSS:hover {
+  transform: translate(-50%, -5%) translateY(-2px); /* Adjust hover effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust box-shadow */
+}
+
+.myCSS:active {
+  transform: translate(-50%, 5%) translateY(2px); /* Adjust active effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box-shadow */
+}
+
+@media (max-width: 767px) {
+.myCSS {
+  font-size: 14px;
+  padding: 8px 16px;
+  margin: 8px auto; /* Adjust margin for smaller screens */
+}
+}
+
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Optional: Set height to ensure vertical centering */
+}
+
+/* Example usage */
+.container {
+  height: 100vh; /* Example: Set height of container */
+}
