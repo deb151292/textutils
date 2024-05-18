@@ -4,7 +4,6 @@ import {HomeButton} from "../component/Button";
 
 export default function About(props) {
 
-  console.log(props.pagehaldler)
   return (
     <div 
     className="container"  

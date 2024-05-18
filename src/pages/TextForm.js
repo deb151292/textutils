@@ -11,8 +11,13 @@ export default function TextForm(props) {
   };
 
   const handleClickA = () => {
-    settext(text.replace(/\s/g, ""));
-    props.showalert("success", "Empty Space removed");
+    if (text.replace(/\s/g) ===''){
+      props.showalert("danger", "Please enter something");
+    } else {
+      settext(text.replace(/\s/g, ""));
+      props.showalert("success", "Empty Space removed");
+    }
+   
   };
   const handleClickB = () => {
     if (text.toUpperCase() === text){
@@ -39,16 +44,26 @@ export default function TextForm(props) {
   };
   
   const encodeBase64 = () => {
-    const encoded = btoa(text); // Encode input text to Base64
+    if (text.replace(/\s/g) ===''){
+      props.showalert("danger", "Please enter something");
+    } else {
+      const encoded = btoa(text); // Encode input text to Base64
     settext(encoded);
     props.showalert("success", "Converted to Base64");
+    }
+    
 
   };
 
   const decodeBase64 = () => {
-    const decoded = atob(text); // Decode Base64-encoded text
-    settext(decoded);
-    props.showalert("success", "Converted from Base64 to Text");
+    if (text.replace(/\s/g) ===''){
+      props.showalert("danger", "Please enter something");
+    } else {
+      const decoded = atob(text); // Decode Base64-encoded text
+      settext(decoded);
+      props.showalert("success", "Converted from Base64 to Text");
+    }
+   
 
   };
 
@@ -66,7 +81,7 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className= "container" style={{color: props.mode==='dark' ? 'white' : '#343130'}}>
+      <div className= "container" style={{color: props.mode==='dark' ? 'white' : '#343130', paddingTop: '100px'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3"  >
           <textarea
